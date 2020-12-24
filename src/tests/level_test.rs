@@ -1,6 +1,6 @@
 use crate::level;
-use crate::HashMap;
-use crate::VecDeque;
+use std::collections::HashMap;
+use std::collections::VecDeque;
 
 #[cfg(test)]
 #[test]

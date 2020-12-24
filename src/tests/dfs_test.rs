@@ -1,7 +1,7 @@
-#[cfg(test)]
 use crate::dfs;
-use crate::HashMap;
+use std::collections::HashMap;
 
+#[cfg(test)]
 #[test]
 pub fn normal_tree() {
     let mut tree: HashMap<&str, Vec<&str>> = HashMap::new();
