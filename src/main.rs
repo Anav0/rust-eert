@@ -45,7 +45,7 @@ pub fn level<'a>(
                 fifo.push_back(children[0]);
                 fifo.push_back(children[1]);
             }
-            _ => panic!("Node has more than two children"),
+            _ => panic!(format!("Node: {} has more than two children", poped_node)),
         }
     }
 }
