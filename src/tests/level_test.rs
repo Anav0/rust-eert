@@ -13,7 +13,7 @@ pub fn level_normal_tree() {
     tree.insert("E", vec![]);
 
     let mut result = "".to_owned();
-    level(VecDeque::new(), &tree, "A", &mut |node| {
+    level(&mut VecDeque::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -26,7 +26,7 @@ pub fn level_single_node() {
     tree.insert("A", vec![]);
 
     let mut result = "".to_owned();
-    level(VecDeque::new(), &tree, "A", &mut |node| {
+    level(&mut VecDeque::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -40,7 +40,7 @@ pub fn level_more_that_two_child_nodes() {
     tree.insert("A", vec!["B", "C", "D"]);
 
     let mut result = "".to_owned();
-    level(VecDeque::new(), &tree, "A", &mut |node| {
+    level(&mut VecDeque::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 }

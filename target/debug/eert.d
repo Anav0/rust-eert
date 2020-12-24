@@ -1,1 +1,1 @@
-/home/igor/Projects/eert/target/debug/eert: /home/igor/Projects/eert/src/main.rs
+/home/igor/Projects/eert/target/debug/eert: /home/igor/Projects/eert/src/main.rs /home/igor/Projects/eert/src/tests/dfs_test.rs /home/igor/Projects/eert/src/tests/level_test.rs /home/igor/Projects/eert/src/tests/mod.rs

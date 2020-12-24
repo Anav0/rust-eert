@@ -12,7 +12,7 @@ pub fn dfs_normal_tree() {
     tree.insert("E", vec![]);
 
     let mut result = "".to_owned();
-    dfs(HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -25,7 +25,7 @@ pub fn dfs_single_node() {
     tree.insert("A", vec![]);
 
     let mut result = "".to_owned();
-    dfs(HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -39,7 +39,7 @@ pub fn dfs_more_that_two_child_nodes() {
     tree.insert("A", vec!["B", "C", "D"]);
 
     let mut result = "".to_owned();
-    dfs(HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 }

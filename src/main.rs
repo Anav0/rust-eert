@@ -3,7 +3,7 @@ use std::collections::VecDeque;
 mod tests;
 
 pub fn dfs<'a>(
-    mut visited: std::collections::HashMap<&'a str, u8>,
+    visited: &mut HashMap<&'a str, u8>,
     tree: &'a HashMap<&str, Vec<&str>>,
     node: &'a str,
     on_print: &mut dyn for<'r> FnMut(&'r str),
@@ -17,13 +17,13 @@ pub fn dfs<'a>(
 
         visited.insert(node, 1);
         for brother in &tree[node] {
-            dfs(visited.clone(), tree, brother, on_print)
+            dfs(visited, tree, brother, on_print)
         }
     }
 }
 
 pub fn level<'a>(
-    mut fifo: VecDeque<&'a str>,
+    fifo: &mut VecDeque<&'a str>,
     tree: &'a HashMap<&str, Vec<&str>>,
     root_node: &'a str,
     on_print: &mut dyn for<'r> FnMut(&'r str),
