@@ -1,5 +1,6 @@
 use crate::dfs;
 use std::collections::HashMap;
+use std::collections::HashSet;
 
 #[cfg(test)]
 #[test]
@@ -12,7 +13,7 @@ pub fn normal_tree() {
     tree.insert("E", vec![]);
 
     let mut result = "".to_owned();
-    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashSet::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -25,7 +26,7 @@ pub fn single_node() {
     tree.insert("A", vec![]);
 
     let mut result = "".to_owned();
-    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashSet::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 
@@ -39,7 +40,7 @@ pub fn more_that_two_child_nodes() {
     tree.insert("A", vec!["B", "C", "D"]);
 
     let mut result = "".to_owned();
-    dfs(&mut HashMap::new(), &tree, "A", &mut |node| {
+    dfs(&mut HashSet::new(), &tree, "A", &mut |node| {
         result.push_str(node)
     });
 }
