@@ -6,10 +6,10 @@ pub fn dfs<'a>(
     visited: &mut HashMap<&'a str, u8>,
     tree: &'a HashMap<&str, Vec<&str>>,
     node: &'a str,
-    on_print: &mut dyn for<'r> FnMut(&'r str),
+    on_node: &mut dyn for<'r> FnMut(&'r str),
 ) {
     if !visited.contains_key(&node) {
-        on_print(node);
+        on_node(node);
 
         if tree[node].len() > 2 {
             panic!(format!("Node: '{}' has more than two child nodes", node))
@@ -17,7 +17,7 @@ pub fn dfs<'a>(
 
         visited.insert(node, 1);
         for brother in &tree[node] {
-            dfs(visited, tree, brother, on_print)
+            dfs(visited, tree, brother, on_node)
         }
     }
 }
@@ -26,7 +26,7 @@ pub fn level<'a>(
     fifo: &mut VecDeque<&'a str>,
     tree: &'a HashMap<&str, Vec<&str>>,
     root_node: &'a str,
-    on_print: &mut dyn for<'r> FnMut(&'r str),
+    on_node: &mut dyn for<'r> FnMut(&'r str),
 ) {
     fifo.push_front(root_node);
     while fifo.len() != 0 {
@@ -35,7 +35,7 @@ pub fn level<'a>(
             None => break,
         };
 
-        on_print(poped_node);
+        on_node(poped_node);
         let children = &tree[poped_node];
 
         match children.len() {

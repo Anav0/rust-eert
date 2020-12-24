@@ -4,7 +4,7 @@ use crate::VecDeque;
 
 #[cfg(test)]
 #[test]
-pub fn level_normal_tree() {
+pub fn normal_tree() {
     let mut tree: HashMap<&str, Vec<&str>> = HashMap::new();
     tree.insert("A", vec!["B", "C"]);
     tree.insert("B", vec!["D", "E"]);
@@ -21,7 +21,7 @@ pub fn level_normal_tree() {
 }
 
 #[test]
-pub fn level_single_node() {
+pub fn single_node() {
     let mut tree: HashMap<&str, Vec<&str>> = HashMap::new();
     tree.insert("A", vec![]);
 
@@ -35,7 +35,7 @@ pub fn level_single_node() {
 
 #[test]
 #[should_panic]
-pub fn level_more_that_two_child_nodes() {
+pub fn more_that_two_child_nodes() {
     let mut tree: HashMap<&str, Vec<&str>> = HashMap::new();
     tree.insert("A", vec!["B", "C", "D"]);
 
