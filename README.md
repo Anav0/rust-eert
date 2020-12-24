@@ -1,2 +1,2 @@
 # rust-eert
-Tree traversal alghorithms implemented in ***rust***. Training
+Tree traversal alghorithms implemented in ***rust***.
